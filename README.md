@@ -1,2 +1,18 @@
-# srinivasank1982-web.github.io
-Personal Portfolio Website of K. Srinivasan
+const POEMS = [
+  {
+    id: "KS-0001",
+    title: "குங்குமப்பொட்டே…",
+    date: "20-09-2026",
+    category: "காதல்",
+    preview: "சிறிய சிவப்பு புள்ளிக்குள், சொல்ல முடியாத ஒரு உலகம்…",
+    path: "poems/ks-0001.html"
+  },
+  {
+    id: "KS-0002",
+    title: "உன் ஸ்கூட்டராக…",
+    date: "20-09-2026",
+    category: "கற்பனை",
+    preview: "நீ செல்லும் பாதையில், உன்னுடன் பயணிக்கும் ஒரு கனவாக…",
+    path: "poems/ks-0002.html"
+  }
+];

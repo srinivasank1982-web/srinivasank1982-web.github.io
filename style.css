@@ -1,303 +1,41 @@
-/* ===========================
-   K. Srinivasan Portfolio
-   style.css
-=========================== */
+# KS Kavithai
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
+A simple, free, static Tamil poetry archive for K. Srinivasan.
+
+## Files
+
+- `index.html` — home page and searchable archive
+- `style.css` — responsive design
+- `app.js` — search and poem listing
+- `poems.js` — poem index / numbering registry
+- `poems/` — individual permanent poem pages
+
+## Numbering
+
+Use the format `KS-0001`, `KS-0002`, `KS-0003`, ...
+
+Do not reuse an ID once published.
+
+## Add a new poem
+
+1. Copy an existing HTML file in `poems/`.
+2. Rename it, e.g. `ks-0003.html`.
+3. Replace the title, date, category, poem text, description, and copyright number.
+4. Add the new record to `poems.js`:
+
+```js
+{
+  id: "KS-0003",
+  title: "Your title",
+  date: "DD-MM-YYYY",
+  category: "Category",
+  preview: "Short preview...",
+  path: "poems/ks-0003.html"
 }
+```
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:#0f172a;
-    color:#ffffff;
-    line-height:1.7;
-}
+## Publish for free
 
-/* Navigation */
+This is a static website and can be hosted free on GitHub Pages.
 
-nav{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    background:rgba(15,23,42,.85);
-    backdrop-filter:blur(12px);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 8%;
-    z-index:1000;
-}
-
-.logo{
-    font-size:28px;
-    font-weight:700;
-    color:#38bdf8;
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:30px;
-}
-
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    font-weight:500;
-    transition:.3s;
-}
-
-nav ul li a:hover{
-    color:#38bdf8;
-}
-
-/* Hero */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:120px 8% 60px;
-    gap:60px;
-}
-
-.left{
-    flex:1;
-}
-
-.left h1{
-    font-size:58px;
-    margin-bottom:15px;
-}
-
-.left h2{
-    color:#38bdf8;
-    font-size:30px;
-    margin-bottom:15px;
-}
-
-.left h3{
-    color:#94a3b8;
-    margin-bottom:20px;
-    font-weight:500;
-}
-
-.left p{
-    max-width:600px;
-    font-size:18px;
-    margin-bottom:35px;
-}
-
-/* Button */
-
-.button{
-    display:inline-block;
-    padding:15px 34px;
-    background:#0ea5e9;
-    color:white;
-    text-decoration:none;
-    border-radius:40px;
-    font-weight:600;
-    transition:.3s;
-}
-
-.button:hover{
-    background:#0284c7;
-    transform:translateY(-3px);
-}
-
-/* Profile */
-
-.right{
-    flex:1;
-    display:flex;
-    justify-content:center;
-}
-
-.right img{
-    width:360px;
-    height:360px;
-    object-fit:cover;
-    border-radius:50%;
-    border:6px solid #38bdf8;
-    box-shadow:0 0 35px rgba(56,189,248,.4);
-}
-
-/* Sections */
-
-section{
-    padding:80px 8%;
-}
-
-section h2{
-    font-size:38px;
-    margin-bottom:35px;
-    color:#38bdf8;
-}
-
-/* Cards */
-
-.card{
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.08);
-    backdrop-filter:blur(18px);
-    border-radius:18px;
-    padding:30px;
-    margin-bottom:25px;
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card h3{
-    margin-bottom:10px;
-}
-
-/* Skills */
-
-.skills{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:18px;
-}
-
-.skills div{
-    background:#1e293b;
-    padding:18px;
-    border-radius:12px;
-    text-align:center;
-    font-weight:600;
-    transition:.3s;
-}
-
-.skills div:hover{
-    background:#0ea5e9;
-    transform:scale(1.05);
-}
-
-/* Contact */
-
-#contact p{
-    margin:15px 0;
-    font-size:18px;
-}
-
-#contact i{
-    color:#38bdf8;
-    margin-right:10px;
-}
-
-/* Footer */
-
-footer{
-    background:#020617;
-    text-align:center;
-    padding:25px;
-    color:#94a3b8;
-}
-
-/* Responsive */
-
-@media(max-width:900px){
-
-nav{
-    flex-direction:column;
-    gap:15px;
-}
-
-nav ul{
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-.hero{
-    flex-direction:column-reverse;
-    text-align:center;
-}
-
-.left h1{
-    font-size:42px;
-}
-
-.left h2{
-    font-size:24px;
-}
-
-.right img{
-    width:260px;
-    height:260px;
-}
-
-.left p{
-    margin:auto;
-    margin-bottom:30px;
-}
-
-}
-
-
-/* Fade Animation */
-
-.hidden{
-
-opacity:0;
-
-transform:translateY(40px);
-
-transition:1s;
-
-}
-
-.show{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-/* Scroll Top Button */
-
-#topBtn{
-
-position:fixed;
-
-right:30px;
-
-bottom:30px;
-
-width:50px;
-
-height:50px;
-
-border:none;
-
-border-radius:50%;
-
-background:#0ea5e9;
-
-color:white;
-
-font-size:22px;
-
-cursor:pointer;
-
-display:none;
-
-box-shadow:0 5px 15px rgba(0,0,0,.3);
-
-}
-
-#topBtn:hover{
-
-background:#0284c7;
-
-}
+Keep a private backup of your original poems as well. Public publication is useful evidence of when a version was published, but it is not a substitute for understanding copyright and keeping your own records.
